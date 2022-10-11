@@ -1,5 +1,5 @@
 import BasePage from './basePage';
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Page } from '@playwright/test';
 
@@ -16,8 +16,8 @@ export default class CheckoutStepTwoPage extends BasePage {
     this.url = new URL(paths.checkoutStepTwo, config.baseUrl);
   }
 
-  async verifyRedirectToCheckoutStepTwoPage() {
-    await this.shouldHaveUrl(paths.checkoutStepTwo);
+  verifyRedirectToCheckoutStepTwoPage() {
+    this.shouldHaveUrl(paths.checkoutStepTwo);
   }
 
   private async sumAllProductsInCart() {

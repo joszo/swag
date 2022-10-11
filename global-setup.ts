@@ -1,5 +1,4 @@
-import { config as testingConfig } from './src/commonData/config';
-import { users } from './src/commonData/users';
+import { config as testingConfig, users } from './src/commonData/envs';
 import { chromium } from '@playwright/test';
 
 async function globalSetup() {

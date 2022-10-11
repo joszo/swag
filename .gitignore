@@ -14,4 +14,4 @@ playwright-report/
 /test-results/
 /playwright-report/
 /playwright/.cache/
-./src/fixtures/storageState.json
+/src/fixtures/storageState.json

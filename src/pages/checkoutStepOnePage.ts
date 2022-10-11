@@ -1,6 +1,6 @@
 import BasePage from './basePage';
 import { CheckoutData } from '../types/checkoutData.type';
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Page } from '@playwright/test';
 
@@ -20,8 +20,8 @@ export default class CheckoutStepOnePage extends BasePage {
     await this.visit();
   }
 
-  async verifyRedirectToCHeckoutStepOnePage() {
-    await this.shouldHaveUrl(paths.checkoutStepOne);
+  verifyRedirectToCHeckoutStepOnePage() {
+    this.shouldHaveUrl(paths.checkoutStepOne);
   }
 
   async fillCheckoutData(object: CheckoutData) {

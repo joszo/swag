@@ -1,4 +1,4 @@
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Elements } from '../types/elements.type';
 import { Page, Locator, expect } from '@playwright/test';

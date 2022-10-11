@@ -1,4 +1,4 @@
-import { checkoutData } from '../commonData/formData';
+import { checkoutFormData } from '../commonData/testData';
 import { test } from '../fixtures/testFixture';
 
 test.use({ storageState: './src/fixtures/storageState.json' });
@@ -33,21 +33,21 @@ test.describe('As a authorized user', () => {
 
     // AND
     await test.step('Perform action on checkoutStepOnePage', async () => {
-      await checkoutStepOnePage.verifyRedirectToCHeckoutStepOnePage();
-      await checkoutStepOnePage.fillCheckoutData(checkoutData);
+      checkoutStepOnePage.verifyRedirectToCHeckoutStepOnePage();
+      await checkoutStepOnePage.fillCheckoutData(checkoutFormData);
       await checkoutStepOnePage.clickContinueButton();
     });
 
     // THEN
     await test.step('Perform action on checkoutStepTwoPage', async () => {
-      await checkoutStepTwoPage.verifyRedirectToCheckoutStepTwoPage();
+      checkoutStepTwoPage.verifyRedirectToCheckoutStepTwoPage();
       await checkoutStepTwoPage.verifyAmounts();
       await checkoutStepTwoPage.clickFinishButton();
     });
 
     // AND
     await test.step('Perform action on checkoutComplete', async () => {
-      await checkoutCompletePage.verifyRedirectToCheckoutCompletePage();
+      checkoutCompletePage.verifyRedirectToCheckoutCompletePage();
       // INFO: I know that more validation can be done here, but this is only recruitment task 😊
       await checkoutCompletePage.ponyShouldBeVisible();
       await checkoutCompletePage.clickBackHomeButton();
@@ -55,7 +55,7 @@ test.describe('As a authorized user', () => {
 
     // AND
     await test.step('Perform action on inventory', async () => {
-      await inventoryPage.verifyRedirectToInventoryPage();
+      inventoryPage.verifyRedirectToInventoryPage();
     });
   });
 });

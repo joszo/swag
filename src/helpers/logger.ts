@@ -1,4 +1,4 @@
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import * as winston from 'winston';
 
 enum LoggerLevel {

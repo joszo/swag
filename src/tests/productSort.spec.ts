@@ -1,4 +1,4 @@
-import { testData } from '../commonData/testData';
+import { sortTestData } from '../commonData/testData';
 import { test } from '../fixtures/testFixture';
 
 test.use({ storageState: './src/fixtures/storageState.json' });
@@ -7,26 +7,26 @@ const testCases = [
   {
     name: 'Low-High',
     sortOption: 'lohi',
-    expectedValue: [...testData.pricesArray.sort((a, b) => a - b)],
-    isPrice: true,
+    expectedValue: [...sortTestData.pricesArray.sort((a, b) => a - b)],
+    isPriceTest: true,
   },
   {
     name: 'High-Low',
     sortOption: 'hilo',
-    expectedValue: [...testData.pricesArray.sort((a, b) => b - a)],
-    isPrice: true,
+    expectedValue: [...sortTestData.pricesArray.sort((a, b) => b - a)],
+    isPriceTest: true,
   },
   {
     name: 'A-Z',
     sortOption: 'az',
-    expectedValue: [...testData.namesArray.sort((a, b) => a.localeCompare(b))],
-    isPrice: false,
+    expectedValue: [...sortTestData.namesArray.sort((a, b) => a.localeCompare(b))],
+    isPriceTest: false,
   },
   {
     name: 'Z-A',
     sortOption: 'za',
-    expectedValue: [...testData.namesArray.sort((a, b) => b.localeCompare(a))],
-    isPrice: false,
+    expectedValue: [...sortTestData.namesArray.sort((a, b) => b.localeCompare(a))],
+    isPriceTest: false,
   },
 ];
 
@@ -41,7 +41,7 @@ testCases.forEach((testCase) => {
     await inventoryPage.selectProductSortingMethod(testCase.sortOption);
 
     // AND
-    const result = testCase.isPrice
+    const result = testCase.isPriceTest
       ? await inventoryPage.getPricesArray()
       : await inventoryPage.getNamesArray();
 

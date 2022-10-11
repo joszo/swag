@@ -1,5 +1,5 @@
 import BasePage from './basePage';
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Page, Locator } from '@playwright/test';
 
@@ -41,8 +41,8 @@ export default class InventoryPage extends BasePage {
     return productNames;
   }
 
-  async verifyRedirectToInventoryPage() {
-    await this.shouldHaveUrl(paths.inventory);
+  verifyRedirectToInventoryPage() {
+    this.shouldHaveUrl(paths.inventory);
   }
 
   async shoppingBadgeShouldNotBeVisible() {

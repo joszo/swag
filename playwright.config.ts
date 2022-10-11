@@ -1,4 +1,4 @@
-import { config as frameworkConfig } from './src/commonData/config';
+import { config as frameworkConfig } from './src/commonData/envs';
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 

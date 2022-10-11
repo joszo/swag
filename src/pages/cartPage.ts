@@ -1,5 +1,5 @@
 import BasePage from './basePage';
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Page } from '@playwright/test';
 

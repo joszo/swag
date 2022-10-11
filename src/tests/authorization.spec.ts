@@ -1,5 +1,5 @@
-import { users } from '../commonData/users';
-import { dictionary } from '../commonData/dictionary';
+import { users } from '../commonData/envs';
+import { dictionary } from '../commonData/testData';
 import { paths } from '../commonData/paths';
 import { test } from '../fixtures/testFixture';
 
@@ -15,7 +15,7 @@ test.describe('As unauthorized user ', () => {
     await loginPage.clickLoginAndWaitForNavigation();
 
     // THEN
-    await loginPage.shouldHaveUrl(/.*inventory/);
+    loginPage.shouldHaveUrl(/.*inventory/);
   });
 
   test('I want to login into swag app as locked out user @smoke', async ({ loginPage }) => {
@@ -29,7 +29,7 @@ test.describe('As unauthorized user ', () => {
     await loginPage.clickLoginButton();
 
     // THEN
-    await loginPage.shouldHaveUrl('/');
+    loginPage.shouldHaveUrl('/');
     await loginPage.shouldDisplayErrorValidation(dictionary.errorMessages.lockedOutUser);
   });
 

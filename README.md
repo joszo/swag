@@ -1,7 +1,3 @@
-### TODO:
-- Add git CI CD
-- Add docker support
-
 ### Install dependencies
 As in every node project run `npm install` or `npm i`.
 

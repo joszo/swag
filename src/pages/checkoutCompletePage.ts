@@ -1,5 +1,5 @@
 import BasePage from './basePage';
-import { config } from '../commonData/config';
+import { config } from '../commonData/envs';
 import { paths } from '../commonData/paths';
 import { Page } from '@playwright/test';
 
@@ -13,8 +13,8 @@ export default class CheckoutCompletePage extends BasePage {
     this.url = new URL(paths.checkoutComplete, config.baseUrl);
   }
 
-  async verifyRedirectToCheckoutCompletePage() {
-    await this.shouldHaveUrl(paths.checkoutComplete);
+  verifyRedirectToCheckoutCompletePage() {
+    this.shouldHaveUrl(paths.checkoutComplete);
   }
 
   async ponyShouldBeVisible() {
