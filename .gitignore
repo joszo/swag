@@ -1,0 +1,17 @@
+.DS_Store
+.vscode
+
+# Dependency directories
+node_modules/
+
+# Dotenv environment variables file
+.env
+
+# Playwright
+traces/
+screenshots/
+playwright-report/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+./src/fixtures/storageState.json

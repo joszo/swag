@@ -1,0 +1,36 @@
+{
+  "name": "swag",
+  "version": "1.0.0",
+  "description": "Code & Pepper testing challenge",
+  "author": "Józef Szymala",
+  "license": "ISC",
+  "scripts": {
+    "test": "playwright test",
+    "test-head": "playwright test --headed",
+    "report": "playwright show-report",
+    "format": "prettier --write \"**/*.{ts,js}\"",
+    "lint": "eslint --fix --ext .ts ./src"
+  },
+  "dependencies": {
+    "@faker-js/faker": "6.0.0-alpha.5",
+    "dotenv-safe": "8.2.0",
+    "http-status-codes": "2.2.0",
+    "luxon": "2.3.0",
+    "winston": "3.7.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.27.0",
+    "@types/axios": "0.14.0",
+    "@types/dotenv-safe": "8.1.2",
+    "@types/luxon": "2.0.9",
+    "@types/node": "16.11.12",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
+    "@typescript-eslint/parser": "5.16.0",
+    "eslint": "8.8.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.5.1",
+    "typescript": "4.6.2"
+  }
+}
