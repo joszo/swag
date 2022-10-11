@@ -1,0 +1,35 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  playwright-e2e:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Chromium Browser 
+        run: npx playwright install chromium
+      - name: Run Playwright tests
+        run: npm run test
+        env: 
+          DEBUG_LOGS: false
+          BASE_URL: ${{ secrets.BASE_URL }}
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+          STANDARD_USER: ${{ secrets.STANDARD_USER }}
+          LOCKED_OUT_USER: ${{ secrets.LOCKED_OUT_USER }}
+          PROBLEM_USER: ${{ secrets.PROBLEM_USER }}
+          PERFORMANCE_GLITCH_USER: ${{ secrets.PERFORMANCE_GLITCH_USER }}
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 3
