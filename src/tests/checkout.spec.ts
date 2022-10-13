@@ -20,6 +20,8 @@ test.describe('As a authorized user', () => {
     // GIVEN
     await page.addInitScript(() => {
       return window.localStorage.setItem('cart-contents', '[0,1,2,0]');
+      // FIXME: Failing scenario: [JIRA-03](https://sample.jira.com/jira-03)
+      // return window.localStorage.setItem('cart-contents', '[4,1,5,2,0]');
     });
 
     // WHEN

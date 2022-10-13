@@ -5,7 +5,7 @@ As in every node project run `npm install` or `npm i`.
 To run all spec files in terminal use `npm run test`.
 
 ### Run tests with specific tags
-To run specific set of tests e.g smoke in title description add @myTag and then run `npm run test --grep @myTag`.
+To run specific set of tests e.g smoke in title description add @myTag and then run `npm run test -- --grep @myTag`.
 
 ### Run spec file
 To run specific file in terminal use `npm run test tests/testingPage.spec.ts`.
