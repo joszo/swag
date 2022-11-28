@@ -1,7 +1,7 @@
 {
   "name": "swag",
   "version": "1.0.0",
-  "description": "Code & Pepper testing challenge",
+  "description": "Test Sample Repository",
   "author": "Józef Szymala",
   "license": "ISC",
   "scripts": {
@@ -11,13 +11,11 @@
     "format": "prettier --write \"**/*.{ts,js}\"",
     "lint": "eslint --fix --ext .ts ./src"
   },
-  "dependencies": {
+  "devDependencies": {
     "@faker-js/faker": "6.0.0-alpha.5",
     "dotenv-safe": "8.2.0",
-    "winston": "3.7.2"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.27.0",
+    "winston": "3.7.2",
+    "@playwright/test": "1.28.0",
     "@types/dotenv-safe": "8.1.2",
     "@types/node": "16.11.12",
     "@typescript-eslint/eslint-plugin": "5.16.0",

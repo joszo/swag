@@ -1,6 +1,9 @@
 ### Install dependencies
 As in every node project run `npm install` or `npm i`.
 
+### ENVIRONMENT VARIABLES
+In repository we use .env files, ask other developers for correct data.
+
 ### Run all tests
 To run all spec files in terminal use `npm run test`.
 
@@ -17,7 +20,7 @@ After all runs in `playwright-report` folder is created index.html with report. 
 To format project use `npm run format`. To run linter and verify code use `npm run lint`.
 
 ### Different browser
-If you would like to run test on different browsers in `playwright.config.ts` find projects section, and add/enable other browsers. 
+If you would like to run test on different browsers in ` playwright.config.ts` find projects section, and add/enable other browsers. 
 
 ### Known Problems:
 1. `performanceGlitchUser` has problems with 'to long to take' actions on page reported [JIRA-01](https://sample.jira.com/jira-01)
